@@ -37,7 +37,7 @@ void	display_comms(int signal, siginfo_t *info, void *context)
 	bit++;
 	usleep(100);
 }
-
+#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	struct sigaction	sa;
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	int					j;
 	int					pid;
 
-	pid = ft_atoi(argv[2]);
+	pid = ft_atoi(argv[1]);
 	i = 0;
 	sa.sa_sigaction = display_comms;
 	sa.sa_flags = SA_SIGINFO;
@@ -58,5 +58,11 @@ int	main(int argc, char **argv)
 			j++;
 		}
 		i++;
+	}
+	j = 0;
+	while (j < 8)
+	{
+		send_byte('\0', pid, sa);
+		j++;
 	}
 }
