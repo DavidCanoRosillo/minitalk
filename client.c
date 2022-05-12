@@ -2,9 +2,7 @@
 
 int	send_signal(int pid, int signal)
 {
-	int	ret;
-
-	ret = kill(pid, signal);
+	kill(pid, signal);
 	return (0);
 }
 
@@ -25,6 +23,9 @@ void	send_byte(char byte, int pid, struct sigaction sa)
 void	display_comms(int signal, siginfo_t *info, void *context)
 {
 	static int	bit;
+	(void)context;
+	signal--;
+	info++;
 
 	if (!bit)
 		bit = 1;
@@ -44,7 +45,8 @@ int	main(int argc, char **argv)
 	int					i;
 	int					j;
 	int					pid;
-
+	
+	argc--;
 	pid = ft_atoi(argv[1]);
 	i = 0;
 	sa.sa_sigaction = display_comms;

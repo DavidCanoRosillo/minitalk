@@ -47,6 +47,7 @@ static void	sig_received(int sig, siginfo_t *info, void *context)
 	static int	nbit;
 	static char	data;
 	static dynamic_array *d_arr;
+	(void)context;
 	
 	if (!d_arr)
 	{
