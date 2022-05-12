@@ -1,3 +1,4 @@
+.PHONY: all clean fclean re
 NAME_SERVER = server
 NAME_CLIENT = client
 CC = gcc
