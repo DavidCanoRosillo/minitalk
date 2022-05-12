@@ -6,7 +6,7 @@
 /*   By: dcano-ro <dcano-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 18:35:17 by dcano-ro          #+#    #+#             */
-/*   Updated: 2022/05/12 20:42:05 by dcano-ro         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:30:28 by dcano-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(int argc, char **argv)
 	struct sigaction	sa;
 	int					i;
 	int					pid;
-	
+
 	if (argc == 3)
 	{
 		argc--;
