@@ -6,7 +6,7 @@
 /*   By: dcano-ro <dcano-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 18:35:17 by dcano-ro          #+#    #+#             */
-/*   Updated: 2022/05/12 18:58:23 by dcano-ro         ###   ########.fr       */
+/*   Updated: 2022/05/12 20:42:05 by dcano-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,14 @@ int	main(int argc, char **argv)
 	struct sigaction	sa;
 	int					i;
 	int					pid;
-
-	argc--;
-	pid = ft_atoi(argv[1]);
-	i = 0;
-	sa.sa_sigaction = display_comms;
-	sa.sa_flags = SA_SIGINFO;
-	too_many_lines(i, argv[2], pid, sa);
+	
+	if (argc == 3)
+	{
+		argc--;
+		pid = ft_atoi(argv[1]);
+		i = 0;
+		sa.sa_sigaction = display_comms;
+		sa.sa_flags = SA_SIGINFO;
+		too_many_lines(i, argv[2], pid, sa);
+	}
 }
