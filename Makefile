@@ -2,7 +2,7 @@ NAME_SERVER = server
 NAME_CLIENT = client
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-SRC_SERVER = server.c ft_putnbr_fd.c
+SRC_SERVER = server.c ft_putnbr_fd.c ft_atoi.c
 SRC_CLIENT = client.c ft_atoi.c
 
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
